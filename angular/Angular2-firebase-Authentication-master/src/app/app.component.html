@@ -1,0 +1,36 @@
+<!--
+@Author: Tushar Agarwal(tusharcoder) <tushar>
+@Date:   2017-01-27T23:20:17+05:30
+@Email:  tamyworld@gmail.com
+@Filename: app.component.html
+@Last modified by:   tushar
+@Last modified time: 2017-01-28T00:54:08+05:30
+-->
+
+
+<button md-raised-button (click)="logout()" *ngIf="logged_in">
+  Logout
+</button>
+<button md-raised-button (click)="googlelogin()" *ngIf="!logged_in">
+  <img src="../assets/google.png" width="50px" height="auto"/><h2>Google Login</h2>
+</button>
+<br/>
+<button md-raised-button (click)="facebooklogin()" *ngIf="!logged_in">
+ <img src="../assets/facebook.png" width="50px" height="auto"/><h2>Facebook Login</h2>
+</button>
+<br/>
+<button md-raised-button (click)="githublogin()" *ngIf="!logged_in">
+  <img src="../assets/github.png" width="50px" height="auto"/><h2>Github Login</h2>
+</button>
+<button md-raised-button (click)="twitterlogin()" *ngIf="!logged_in">
+  <img src="../assets/facebook.png" width="50px" height="auto"/><h2>twitterlogin</h2>
+</button>
+<br/>
+<div *ngIf="logged_in">
+  <h1>Logged In through {{provider}}</h1>
+  <h2>Photo</h2>
+  <img src="{{user.auth.photoURL}}" alt="{{user.auth.displayName}}"/>
+  <h2>Name</h2>
+  {{user.auth.displayName}}
+
+</div>
